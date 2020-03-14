@@ -1,0 +1,46 @@
+version: "3"
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: "app_mysql_container"
+    networks:
+      - app-network
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - "3306:3306"
+  api:
+    build:
+      context: "./applications/api"
+      dockerfile: "Dockerfile"
+    command: yarn run start:dev
+    container_name: "app_api_container"
+    depends_on:
+      - mysql
+    image: app_api:latest
+    networks:
+      - app-network
+    ports:
+      - 3000:3000
+    volumes:
+      - "./applications/api:/usr/src/api"
+  pwa:
+    build:
+      context: "./applications/pwa"
+      dockerfile: "Dockerfile"
+    command: yarn run start:docker
+    container_name: "app_pwa_container"
+    environment:
+      - NODE_ENV=development
+    image: app_pwa:latest
+    networks:
+      - app-network
+    ports:
+      - 4200:4200
+    volumes:
+      - "./applications/pwa:/usr/src/pwa"
+
+networks:
+  app-network:
+    driver: bridge
