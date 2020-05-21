@@ -1,6 +1,6 @@
 # Docker presentation
 
-This repository is the support of my [talk about Docker](https://talks.yannickdebree.com/en/docker-presentation).
+This repository is the support of my [talk about Docker](https://talks.yannickdebree.com/en/docker).
 
 ## Installations
 
