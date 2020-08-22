@@ -72,7 +72,7 @@ Build images of defined services
 
 ```
 cd ../docker-compose
-docker-compose build
+docker-compose build --no-cache
 ```
 
 Run commands against some services
