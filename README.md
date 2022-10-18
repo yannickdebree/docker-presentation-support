@@ -11,43 +11,43 @@ This repository is the support of my [talk about Docker](https://yannickdebree.c
 
 Visualize all images
 
-```
+```bash
 docker images
 ```
 
 Visualize running containers
 
-```
+```bash
 docker ps
 ```
 
 Visualize all containers
 
-```
+```bash
 docker ps -a
 ```
 
 Run demo container
 
-```
+```bash
 docker run hello-world
 ```
 
 Pull image from Docker Hub
 
-```
-docker pull node:10
+```bash
+docker pull node:16
 ```
 
 Run container from image in CLI
 
-```
-docker run -it --name first-node-container node:10 bash
+```bash
+docker run -it --name first-node-container node:16 bash
 ```
 
 Remove container
 
-```
+```bash
 docker rm first-node-container
 ```
 
@@ -55,14 +55,14 @@ docker rm first-node-container
 
 Build image from Dockerfile
 
-```
+```bash
 cd dockerfile
 docker image build -t my-first-dockerfile-image .
 ```
 
 Run the built image
 
-```
+```bash
 docker run my-first-dockerfile-image
 ```
 
@@ -70,27 +70,27 @@ docker run my-first-dockerfile-image
 
 Build images of defined services
 
-```
+```bash
 cd ../docker-compose
 docker-compose build --no-cache
 ```
 
 Run commands against some services
 
-```
+```bash
 docker-compose run api yarn install
 docker-compose run pwa yarn install
 ```
 
 Start and attach containers to services
 
-```
+```bash
 docker-compose up
 ```
 
 Stop services and remove containers
 
-```
+```bash
 docker-compose stop
 docker-compose rm
 ```

@@ -1,9 +1,9 @@
-FROM node:10
+FROM node:16
 
-RUN mkdir -p /usr/src/app
+RUN mkdir -p /app
 
-COPY app.js /usr/src/app
+COPY app.js /app
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
 CMD ["node", "app.js"]
