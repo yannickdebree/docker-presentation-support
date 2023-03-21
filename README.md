@@ -75,11 +75,10 @@ cd ../docker-compose
 docker-compose build --no-cache
 ```
 
-Run commands against some services
+Run command inside a container to install dependencies
 
 ```bash
 docker-compose run api yarn install
-docker-compose run pwa yarn install
 ```
 
 Start and attach containers to services
