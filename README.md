@@ -1,4 +1,4 @@
-# Docker presentation
+# Docker presentation support
 
 This repository is the support of my [talk about Docker](https://yannickdebree.com/talks/docker.html).
 
